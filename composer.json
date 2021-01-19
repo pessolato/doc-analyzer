@@ -1,0 +1,13 @@
+{
+    "name": "pessolato/doc-analyzer",
+    "description": "Analyzer to retrieve the family tree information from brazilian documents",
+    "authors": [
+        {
+            "name": "pessolato",
+            "email": "victor.pessolato@gmail.com"
+        }
+    ],
+    "require": {
+        "google/cloud-vision": "^1.2"
+    }
+}
