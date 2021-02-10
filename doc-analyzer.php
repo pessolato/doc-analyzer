@@ -5,6 +5,13 @@ require __DIR__ . '/vendor/autoload.php';
 
 require_once('DocAnalyzer.php');
 
+function dd($var) {
+    echo('<pre>');
+    var_dump($var);
+    echo('</pre>');
+    die();
+}
+
 function processDoc($doc) {
 
     switch ($doc['error']) {
@@ -24,6 +31,9 @@ function processDoc($doc) {
     $image = file_get_contents($doc['tmp_name']);
 
     $text = $docAnalyzer->getText($image);
+    //dd($text);
+    dd($docAnalyzer->getNames($text));
+
     $json = json_encode($docAnalyzer->getNames($text), JSON_INVALID_UTF8_SUBSTITUTE);
     return $json;
 }
